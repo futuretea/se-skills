@@ -58,7 +58,7 @@ Before drafting any response text, define 3-5 win themes following the **Resonat
 Theme: <What the buyer needs> → <What we deliver> → <Why they should believe us (proof)>
 ```
 
-Each theme maps to at least one customer priority identified in the RFP. Win themes guide all downstream response writing — every answer should reinforce at least one theme.
+Each theme maps to at least one customer priority surfaced during the Go/No-Go skim. (Customer priorities will be extracted in detail during Step 2 — win themes can be refined afterward.) Win themes guide all downstream response writing — every answer should reinforce at least one theme.
 
 ### Step 2: Parse the RFP
 
