@@ -1,7 +1,7 @@
 ---
 name: discovery-prep
-description: This skill should be used when the user asks to "prepare for a discovery call", "create a call plan", "plan a technical discovery meeting", "prepare customer questions", "build a discovery guide", or needs to generate a structured interview guide for a first or follow-up customer technical discovery session.
-version: 0.1.0
+description: This skill should be used when the user asks to "prepare for a discovery call", "create a call plan", "plan a technical discovery meeting", "prepare customer questions", "build a discovery guide", "run a disco-stration", or needs to generate a structured interview guide for a first or follow-up customer technical discovery session. Incorporates MEDDPICC qualification, ambition-oriented questioning, and discovery-demo blending techniques.
+version: 0.2.0
 ---
 
 # Discovery Prep
@@ -32,6 +32,22 @@ Assemble a customer profile from SE input and available assets:
 | Competitive signals | SE input |
 | Same-industry cases | `knowledge/cases/` — match by industry |
 | Relevant OSS capabilities | `knowledge/oss-feature-matrix.md` — modules likely relevant |
+
+### Step 1b: Apply MEDDPICC qualification
+
+Score the opportunity against the MEDDPICC framework to surface blind spots before the call:
+
+| Element | Status | What to probe in the call |
+|---------|--------|---------------------------|
+| **M**etrics (value levers) | Known / Unknown | What KPIs does the buyer care about? |
+| **E**conomic Buyer | Known / Unknown | Who signs? What is their priority? |
+| **D**ecision Criteria | Known / Unknown | How will they evaluate solutions? |
+| **D**ecision Process | Known / Unknown | Steps from eval to purchase? |
+| **I**mplicit Pain | Known / Unknown | What is the cost of doing nothing? |
+| **C**hampion | Identified / Missing | Who is our internal advocate? |
+| **C**ompetition | Known / Unknown | Who else is in the eval? |
+
+Elements marked "Unknown" or "Missing" become priority probe targets in the question path.
 
 ### Step 2: Generate hypotheses
 
@@ -72,13 +88,34 @@ status: draft
 1. <Question> — Purpose: <why this question>
 2. ...
 
-### Phase 2: Pain Points (15 min)
+### Phase 2: Pain Points & Ambition (15 min)
+
+Mix pain-oriented and ambition-oriented questions:
+
+| Type | Example | Purpose |
+|------|---------|---------|
+| Pain | "What slows your team down most right now?" | Surface explicit friction |
+| Pain | "If nothing changed, what would that cost you in 12 months?" | Quantify cost of inaction |
+| Ambition | "What would success feel like to your team?" | Reveal emotional drivers |
+| Ambition | "If our platform could fix one thing tomorrow, what would it be?" | Prioritize value delivery |
+| Ambition | "Where does your leadership want this team to be in 2 years?" | Surface strategic context |
+
 1. <Question> — Purpose: <why this question, which capability it relates to>
 2. ...
 
 ### Phase 3: Solution Probing (10 min)
 1. <Question> — Purpose: <why this question>
 2. ...
+
+### Disco-Stration Option
+> When discovery and demo are merged into a single fluid session
+
+Instead of separate Q&A and demo blocks, intersperse demonstration moments within discovery:
+- Show a relevant capability, then ask: *"Does this map to how you operate?"*
+- Use the "Reverse Demo": ask the customer to walk through *their* current workflow first, then reveal the corresponding capability
+- Shift between question and demonstration based on buyer reactions, not a rigid script
+
+If the SE plans a Disco-Stration, note it here and reduce Phase 3 (Solution Probing) time accordingly.
 
 ## Ammo Belt
 > Relevant cases and capabilities to deploy during the conversation
@@ -95,9 +132,34 @@ status: draft
 
 ## Post-Call Notes
 > Fill in after the call
-- Validated hypotheses:
-- Newly discovered pain points:
-- Next steps:
+
+- **Company Overview**: <1-2 sentences summarizing who they are>
+- **Team Goals**: <What outcome are they driving toward>
+- **Current Workflow**: <How do they operate today, key friction points>
+- **Pain Points** (with direct quotes if possible):
+  - ...
+  - ...
+- **Decision Makers** (roles identified):
+  - ...
+  - ...
+- **Competition**: <Who else is in the eval>
+- **MEDDPICC Scorecard** (updated):
+  | Element | Post-call status |
+  |---------|-----------------|
+  | M | ... |
+  | E | ... |
+  | D (Criteria) | ... |
+  | D (Process) | ... |
+  | I | ... |
+  | C (Champion) | ... |
+  | C (Competition) | ... |
+- **Validated Hypotheses**:
+  - ...
+- **Newly Discovered Pain Points**:
+  - ...
+- **Action Items**:
+  - [ ] ...
+- **Next Call Objective**: <one sentence>
 ```
 
 ### Step 4: Post-generation guidance
@@ -116,8 +178,11 @@ status: draft
 ## Quality Checklist
 
 - [ ] Customer profile includes at minimum industry and known background
+- [ ] MEDDPICC elements assessed, unknowns flagged as probe targets
 - [ ] Core hypotheses have concrete verification methods (not "ask them")
+- [ ] Question path includes both pain-oriented and ambition-oriented questions
 - [ ] Question path follows the three-phase progression
 - [ ] Ammo Belt references at least 2 relevant cases or OSS capabilities
 - [ ] Avoid items are specific, not generic
+- [ ] Post-Call Notes template includes MEDDPICC scorecard update
 - [ ] Output frontmatter complete

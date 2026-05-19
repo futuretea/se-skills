@@ -1,7 +1,7 @@
 ---
 name: case-import
-description: This skill should be used when the user asks to "record a case", "import a case study", "document a past project", "save a customer story", or needs to structure a project narrative into a standardized case format for the knowledge base. Also triggered after project delivery to preserve lessons learned.
-version: 0.1.0
+description: This skill should be used when the user asks to "record a case", "import a case study", "document a past project", "save a customer story", "capture lessons learned", or needs to structure a project narrative into a standardized case format for the knowledge base. Also triggered after project delivery, deal closure, or win/loss review to preserve tribal knowledge.
+version: 0.2.0
 ---
 
 # Case Import
@@ -27,7 +27,8 @@ Describe the project:
 - What OSS version did you start from?
 - What customizations were made? (modules, features, effort)
 - What went wrong during implementation? (pitfalls)
-- What is the current status? (live / POC / in progress)
+- What was the deal outcome? (won / lost) — if lost, who won and why?
+- What deal stage was this? (discovery / eval / POC / negotiation / closed)
 - Any quantifiable results?
 ```
 
@@ -44,7 +45,11 @@ Map the provided information against the required and optional fields:
 | modules | contact |
 | pain_points | tech_stack |
 | solution_summary | lessons_learned |
-| status | |
+| deal_outcome | competitor_displaced |
+| deal_stage | competitor_won |
+
+**Deal outcome values**: `won` | `lost` | `ongoing`
+**Deal stage values**: `discovery` | `evaluation` | `poc` | `negotiation` | `closed`
 
 ### Step 3: Fill gaps (max 3 rounds)
 
@@ -64,6 +69,9 @@ modules:
   - <module-1>
   - <module-2>
 effort: <X person-weeks>
+deal_outcome: won | lost | ongoing
+deal_stage: discovery | evaluation | poc | negotiation | closed
+competitor: <competitor displaced, or competitor who won>
 status: live | POC | delivered
 ---
 
@@ -88,6 +96,15 @@ status: live | POC | delivered
 
 ## Results
 <Quantifiable outcomes or customer feedback>
+
+## Deal Analysis
+> Only applicable for won or lost deals
+
+**Why we won** (or **Why we lost**):
+<2-3 specific reasons. For losses: what would have changed the outcome? For wins: what was the decisive factor?>
+
+**Competitive Context**:
+<Who else was evaluated? How did we position? What worked/didn't work against each competitor?>
 ```
 
 ### Step 5: Confirm and index
@@ -105,8 +122,10 @@ status: live | POC | delivered
 ## Quality Checklist
 
 - [ ] All required fields filled or annotated as TODO
+- [ ] Deal outcome, deal stage, and competitor fields present
 - [ ] Pain points are specific and tangible (not generic phrases like "wanted to improve efficiency")
 - [ ] Pitfall records include the symptom → root cause → fix chain
+- [ ] Deal Analysis section filled for won/lost deals
 - [ ] Module names aligned with the feature matrix
 - [ ] File name follows kebab-case convention
 - [ ] Output frontmatter complete

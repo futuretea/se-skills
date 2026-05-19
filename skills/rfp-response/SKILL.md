@@ -1,7 +1,7 @@
 ---
 name: rfp-response
-description: This skill should be used when the user asks to "respond to an RFP", "draft an RFP response", "generate a bid response", "answer an RFI", "write a technical proposal response", or provides an RFP/RFI document that needs technical answers mapped against open source capabilities and past customization cases.
-version: 0.1.0
+description: This skill should be used when the user asks to "respond to an RFP", "draft an RFP response", "generate a bid response", "answer an RFI", "write a technical proposal response", or provides an RFP/RFI document that needs technical answers mapped against open source capabilities and past customization cases. Includes Go/No-Go qualification, win theme generation, and Feature-Advantage-Benefit mapping.
+version: 0.2.0
 ---
 
 # RFP Response
@@ -20,7 +20,36 @@ If missing, prompt the user to run the corresponding Phase 0 skill first. The sk
 
 ## Workflow
 
-### Step 1: Parse the RFP
+### Step 0: Go/No-Go Qualification
+
+Before investing time in a full response, run a qualification check. If the SE provides enough context, score the opportunity:
+
+| Pillar | Score | Question |
+|--------|-------|----------|
+| **Solution Fit** | /25 | Estimated coverage score. <50% is a red flag; <60% warns. |
+| **Relationship** | /25 | Do we have a champion inside? Is this a cold RFP? |
+| **Competitive Landscape** | /25 | Is the RFP wired for a competitor? Look for proprietary language. |
+| **Strategic Value** | /25 | Does this align with ICP, region, and profitability goals? |
+
+**Red flags that suggest walking away:**
+- Requirements use a competitor's proprietary feature language
+- Unusually short deadline (likely a wired bid seeking backup quotes)
+- Zero existing relationships and the prospect won't engage pre-submission
+- Must-have gaps > 3 or coverage score < 50%
+
+Output the qualification verdict before proceeding. If the SE chooses to proceed despite red flags, note the elevated risk.
+
+### Step 1: Define win themes
+
+Before drafting any response text, define 3-5 win themes following the **Resonate → Differentiate → Substantiate** structure:
+
+```
+Theme: <What the buyer needs> → <What we deliver> → <Why they should believe us (proof)>
+```
+
+Each theme maps to at least one customer priority identified in the RFP. Win themes guide all downstream response writing — every answer should reinforce at least one theme.
+
+### Step 2: Parse the RFP
 
 Read the RFP document (supports `.pdf`, `.docx`, `.md`, `.txt`) and extract a structured requirement list.
 
@@ -33,8 +62,9 @@ For each requirement, extract:
 | summary | One-sentence summary |
 | detail | Full original text |
 | keywords | Technical keywords extracted from the original text |
+| customer_priority | Inferred priority to the buyer (critical / high / medium / low) — based on emphasis in the RFP |
 
-### Step 2: Match against the knowledge base
+### Step 3: Match against the knowledge base
 
 For each requirement, search as follows:
 
@@ -60,7 +90,7 @@ R001: <summary>
   └─ Status: COVERED_OSS | COVERED_CUSTOM | PARTIAL | GAP
 ```
 
-### Step 3: Generate the response draft
+### Step 4: Generate the response draft
 
 Output `outputs/rfp/<customer>-rfp-draft.md`:
 
@@ -74,7 +104,26 @@ status: draft
 
 # RFP Response Draft — <Customer Name>
 
-## Overview
+## Go/No-Go Verdict
+| Pillar | Score |
+|--------|-------|
+| Solution Fit | /25 |
+| Relationship | /25 |
+| Competitive Landscape | /25 |
+| Strategic Value | /25 |
+| **Total** | **/100** |
+| **Verdict** | GO / NO-GO / GO WITH RISK |
+
+## Win Themes
+> Every response reinforces at least one of these themes
+
+| # | Theme | Buyer Need | Our Delivery | Proof |
+|---|-------|------------|-------------|-------|
+| 1 | ... | ... | ... | ... |
+| 2 | ... | ... | ... | ... |
+| 3 | ... | ... | ... | ... |
+
+## Coverage Overview
 
 | Metric | Count | Percentage |
 |--------|-------|------------|
@@ -88,10 +137,18 @@ status: draft
 
 ### R001 — <Requirement Summary>
 **Category**: <category>
+**Priority**: critical | high | medium | low
 **Status**: COVERED_OSS | COVERED_CUSTOM | PARTIAL | GAP
+**Win Theme**: <which theme this reinforces, or "—">
+
+**Feature**: <What capability addresses this requirement>
+
+**Advantage**: <What makes our approach better/different>
+
+**Benefit**: <What tangible outcome this produces for the buyer>
 
 **Response**:
-<Concrete response content>
+<Concrete, buyer-language response content connecting feature → advantage → benefit>
 
 **Source**: <feature matrix row / case file path>
 **Confidence**: high | medium | low
@@ -102,35 +159,69 @@ status: draft
 ## GAP Registry
 > Requirements with no match — needs SME confirmation
 
-| ID | Requirement | Recommended Handling |
-|----|-------------|---------------------|
-| R0xx | ... | Product team to confirm roadmap |
-| R0xx | ... | Evaluate customization feasibility |
+| ID | Requirement | Priority | Recommended Handling |
+|----|-------------|----------|---------------------|
+| R0xx | ... | high | Product team to confirm roadmap |
+| R0xx | ... | medium | Evaluate customization feasibility |
+
+## Executive Summary
+> Write last. Lift the strongest proof points and sharpest language from the completed responses.
+
+**Decision Statement**: <1-2 sentences: the outcome + why you are the credible choice>
+
+**Customer Situation**: <Prove you understand their world — 2-3 sentences>
+
+**Our Approach**: <High-level solution mapped to their top 3 criteria>
+
+**Differentiators**: <3-5 bullets with proof — pulled from win themes>
+
+**Delivery & Risk**: <How execution will be de-risked>
+
+**Next Step**: <Clear path forward>
 ```
 
-### Step 4: Post-generation guidance
+### Step 5: Post-generation guidance
 
-After generating the draft, guide the SE:
+After generating the draft, guide the SE through structured review:
+
+**Gate 1 — Compliance & Coverage:**
 - Review the GAP registry first — identify which gaps can be answered
-- Verify COVERED_CUSTOM items — ensure case descriptions are accurate
-- Final pass for customer-specific phrasing adjustments
+- Verify every RFP requirement has a corresponding response
+
+**Gate 2 — Technical Accuracy:**
+- Verify COVERED_CUSTOM items — ensure case descriptions and version references are accurate
+- Have SMEs validate PARTIAL and GAP items (not rewrite them)
+
+**Gate 3 — Narrative & Proof:**
+- Write the Executive Summary last, lifting the strongest language from completed responses
+- Run the skimmability test: if someone reads only the first sentence of each response, do they get the story?
+- Verify every major claim has evidence attached (feature matrix row, case file, or SME confirmation)
 - Update the status to `reviewed` when done
 
 ## Key Rules
 
+- Run Go/No-Go before drafting. Do not invest hours in a wired bid.
+- Define win themes first. Every response must reinforce at least one theme.
+- Map every response through FAB: Feature → Advantage → Benefit. Do not list features without connecting them to buyer outcomes.
 - Every response must cite its source (specific feature matrix row or case file path)
 - Never fabricate capabilities. Items with no match are marked GAP
 - PARTIAL items must explicitly state "what the OSS provides" and "what requires customization"
 - COVERED_CUSTOM responses should reference the case's specific pitfall records to increase credibility
+- Write the Executive Summary last, after all responses are complete
+- Use the buyer's own language from the RFP — mirror their terminology
 - Do not evaluate commercial strategy (pricing, competitive positioning) — handle technical responses only
 - Avoid vague language like "can be supported, needs evaluation" — either explain how it is supported, or mark it GAP
 
 ## Quality Checklist
 
-- [ ] RFP document successfully parsed, requirement list complete
+- [ ] Go/No-Go qualification completed with scores
+- [ ] 3-5 win themes defined with Resonate → Differentiate → Substantiate structure
+- [ ] RFP document successfully parsed, requirement list complete with customer priorities
 - [ ] Every requirement cross-matched against feature matrix and case library
-- [ ] Every response cites an explicit source
-- [ ] All GAP items annotated, none omitted
+- [ ] Every response includes FAB mapping (Feature / Advantage / Benefit)
+- [ ] Every response cites an explicit source and references at least one win theme
+- [ ] All GAP items annotated with priority and recommended handling
+- [ ] Executive Summary written after responses, using strongest proof points
 - [ ] No vague/disclaiming language present
 - [ ] Output frontmatter complete
 - [ ] Overview statistics table accurate
