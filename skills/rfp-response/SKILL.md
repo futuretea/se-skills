@@ -16,7 +16,7 @@ The following artifacts must exist before running this skill:
 - `knowledge/oss-feature-matrix.md` (output of `/oss-analyze`)
 - At least one case file in `knowledge/cases/` (output of `/case-import`)
 
-If missing, prompt the user to run the corresponding Phase 0 skill first. The skill can run with only the feature matrix (without cases) in degraded mode, but case matching will be unavailable.
+If missing, prompt the SE to run the corresponding Phase 0 skill first. The skill can run with only the feature matrix (without cases) in degraded mode, but case matching will be unavailable.
 
 ## Workflow
 
