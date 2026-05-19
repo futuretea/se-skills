@@ -20,13 +20,24 @@ claude plugins install <repo-url>
 
 ## Skills
 
-| Phase | Skill | Trigger | Output |
-|-------|-------|---------|--------|
-| 0 — Foundation | `/oss-analyze` | GitHub repo URL | `knowledge/oss-feature-matrix.md` |
-| 0 — Foundation | `/case-import` | Project narrative (text) | `knowledge/cases/<case>.md` |
-| 1 — Daily | `/rfp-response` | RFP document (.pdf/.docx/.md) | `outputs/rfp/<customer>-rfp-draft.md` |
-| 1 — Daily | `/discovery-prep` | Customer context | `outputs/discovery/<customer>-call-plan.md` |
-| 1 — Daily | `/demo-builder` | Scenario + features | `outputs/demo/<customer>-demo-script.md` |
+### Phase 0 — Knowledge Bootstrapping
+
+Run these first to seed the knowledge base. Re-run when the OSS project ships a new major version or after significant customer engagements.
+
+| Skill | Usage | Output |
+|-------|-------|--------|
+| `/oss-analyze` | `/oss-analyze https://github.com/apache/flink` | `knowledge/oss-feature-matrix.md` |
+| `/case-import` | `/case-import` then paste a project narrative | `knowledge/cases/<customer>-<project>.md` |
+
+### Phase 1 — Daily Workflows
+
+Run these on every customer engagement. Each consumes the knowledge base artifacts from Phase 0.
+
+| Skill | Usage | Output |
+|-------|-------|--------|
+| `/rfp-response` | `/rfp-response docs/customer-rfp.pdf --customer "某银行"` | `outputs/rfp/<customer>-rfp-draft.md` |
+| `/discovery-prep` | `/discovery-prep --customer "某零售企业" --industry 零售` | `outputs/discovery/<customer>-call-plan.md` |
+| `/demo-builder` | `/demo-builder --customer "某零售企业" --scenario "实时看板" --duration 30min` | `outputs/demo/<customer>-demo-script.md` |
 
 ## Quick Start (from zero)
 
@@ -51,6 +62,20 @@ Phase 1: Daily workflows
 ```
 
 Downstream skills automatically discover upstream artifacts by convention. For example, `/demo-builder` will read the discovery call plan if it exists to personalize the script.
+
+### Methodologies by Skill
+
+| Methodology | oss-analyze | case-import | rfp-response | discovery-prep | demo-builder |
+|-------------|:-----------:|:-----------:|:------------:|:--------------:|:------------:|
+| MEDDPICC | — | — | — | ✓ | — |
+| Gap Selling | — | — | — | ✓ | — |
+| Tell-Show-Tell | — | — | — | — | ✓ |
+| Great Demo! ("Last Thing First") | — | — | — | — | ✓ |
+| FAB Mapping | — | — | ✓ | — | — |
+| Disco-Stration | — | — | — | ✓ | — |
+| Win Themes | — | — | ✓ | — | — |
+| Go/No-Go Qualification | — | — | ✓ | — | — |
+| Docs-as-Code | ✓ | — | — | — | — |
 
 ## Skill Details
 
