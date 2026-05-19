@@ -104,8 +104,21 @@ Mix pain-oriented and ambition-oriented questions:
 2. ...
 
 ### Phase 3: Solution Probing (10 min)
+
+**Gap Selling questions** — quantify the cost of inaction before proposing solutions:
+- "You mentioned X takes 3 hours a day. What would recovering those 3 hours mean for your team's output?"
+- "If this problem stays unsolved for another 6 months, what is the business cost?"
+- "What is stopping you from solving this today?"
+
 1. <Question> — Purpose: <why this question>
 2. ...
+
+**Landmine questions** — surface competitor weaknesses without criticizing them directly:
+- "What is your contingency plan if implementation drags past the expected timeline?"
+- "How are you handling [known competitor gap] today?"
+- "Who on your team will own the integration work post-deployment?"
+
+> Add specific landmine questions tailored to the competitive signals identified in Step 1.
 
 ### Disco-Stration Option
 > When discovery and demo are merged into a single fluid session

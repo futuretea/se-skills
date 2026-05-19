@@ -31,13 +31,19 @@ Before investing time in a full response, run a qualification check. If the SE p
 | **Competitive Landscape** | /25 | Is the RFP wired for a competitor? Look for proprietary language. |
 | **Strategic Value** | /25 | Does this align with ICP, region, and profitability goals? |
 
+**Automatic NO-GO conditions** (hard stops — do not proceed regardless of other scores):
+- Security/compliance requirements are non-negotiable and the OSS + customization cannot satisfy them
+- The RFP is wired for a competitor (proprietary feature language throughout)
+- The prospect refuses all pre-submission engagement
+- Must-have coverage < 50%
+
 **Red flags that suggest walking away:**
 - Requirements use a competitor's proprietary feature language
 - Unusually short deadline (likely a wired bid seeking backup quotes)
 - Zero existing relationships and the prospect won't engage pre-submission
 - Must-have gaps > 3 or coverage score < 50%
 
-Output the qualification verdict before proceeding. If the SE chooses to proceed despite red flags, note the elevated risk.
+Output the qualification verdict before proceeding. If the SE chooses to proceed despite red flags, note the elevated risk. If any automatic NO-GO condition is met, recommend declining and explain why.
 
 ### Step 1: Define win themes
 
@@ -214,7 +220,7 @@ After generating the draft, guide the SE through structured review:
 
 ## Quality Checklist
 
-- [ ] Go/No-Go qualification completed with scores
+- [ ] Go/No-Go qualification completed with scores; automatic NO-GO conditions checked
 - [ ] 3-5 win themes defined with Resonate → Differentiate → Substantiate structure
 - [ ] RFP document successfully parsed, requirement list complete with customer priorities
 - [ ] Every requirement cross-matched against feature matrix and case library

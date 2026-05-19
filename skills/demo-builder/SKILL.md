@@ -61,6 +61,11 @@ Each scene follows **Tell → Show → Tell**:
 - **Solution Walkthrough**: Demonstrate each feature, always connecting back to a previously stated pain point. The frame is "here is how we solve the problem you just described."
 - **Wow Moment**: One unexpected reveal — a quantified result from a past case, a capability competitors lack, or an operation that makes the audience lean in.
 
+**Alternative pattern: "Do the Last Thing First" (Great Demo! method)**:
+Instead of building up to the outcome, start with it. Open the demo on the finished dashboard, report, or solved state that executives care about most. Then peel back layers only in response to prospect questions — "How did we get here? Let me show you."
+- Best for: executive audiences, competitive situations where differentiation matters
+- Contrast with the standard Pain → Solution → Wow flow: this is Outcome → Drill-down → Validation
+
 **Persona-driven vignettes** (for Standard and Custom demos): Build the narrative around a single persona (e.g., "Sofia, the operations manager"). Walk through her daily struggle, the moment she uses your solution, and the victory. The customer is the hero; the product is the helper.
 
 **Audience-adaptive design** (the "3 brains" model):
