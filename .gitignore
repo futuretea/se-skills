@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+*.egg
+
+# Virtualenv
+venv/
+.venv/
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# NotebookLM
+.notebooklm/
+
+# Temporary files
+*.tmp
+*.log
