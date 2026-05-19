@@ -1,6 +1,6 @@
 ---
 name: discovery-prep
-description: This skill should be used when the user asks to "prepare for a discovery call", "create a call plan", "plan a technical discovery meeting", "prepare customer questions", "build a discovery guide", "run a disco-stration", or needs to generate a structured interview guide for a first or follow-up customer technical discovery session. Incorporates MEDDPICC qualification, ambition-oriented questioning, and discovery-demo blending techniques.
+description: This skill should be used when the user asks to "prepare for a discovery call", "create a call plan", "plan a technical discovery meeting", "prepare customer questions", "build a discovery guide", "run a disco-stration", or needs to generate a structured interview guide for a first or follow-up customer technical discovery session. Incorporates MEDDPICC qualification, Gap Selling, ambition-oriented questioning, landmine competitive questions, and discovery-demo blending (Disco-Stration).
 version: 0.2.0
 ---
 
