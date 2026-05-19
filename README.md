@@ -1,8 +1,8 @@
 # se-skills
 
-Claude Code plugin for Solutions Engineers. Codifies daily pre-sales workflows — from open source analysis to RFP response — into reusable slash commands.
+Claude Code plugin for Solutions Engineers. Codifies daily pre-sales workflows — from open source analysis to RFP response — into reusable slash commands. Designed for the **OSS + customization** delivery model.
 
-Designed for the **OSS + customization** delivery model.
+Built on proven SE methodologies: **MEDDPICC**, **Tell-Show-Tell**, **Great Demo!**, **Gap Selling**, and **FAB mapping**.
 
 ## Installation
 
@@ -62,19 +62,19 @@ Re-run when the OSS project releases a new major version.
 
 ### `/case-import`
 
-Convert a natural-language project narrative from an SE into a standardized case file. The skill asks targeted follow-up questions to fill in required fields (customer, industry, pain points, solution, pitfalls, results) and outputs a structured markdown file.
+Convert a natural-language project narrative from an SE into a standardized case file. Captures deal outcome (won/lost), competitive context, deal stage, pitfalls, and a Deal Analysis section for win/loss review — preventing tribal knowledge from walking out the door.
 
 ### `/rfp-response`
 
-Parse a customer RFP/RFI document, match each requirement against the OSS feature matrix and historical case library, and generate a categorized response draft. Each response is labeled with coverage status (COVERED_OSS / COVERED_CUSTOM / PARTIAL / GAP) and traced to its source.
+Go/No-Go qualification first, then win theme generation, then RFP parsing and knowledge-base matching. Each requirement gets a FAB (Feature → Advantage → Benefit) mapped response with coverage status and source tracing. Includes an Executive Summary (written last) and a 3-gate review process (compliance → accuracy → narrative).
 
 ### `/discovery-prep`
 
-Generate a structured call plan for technical discovery meetings. Includes a customer profile, testable hypotheses, a three-phase question path (current state → pain points → solution probing), an "ammo belt" of relevant cases and capabilities, and specific topics to avoid.
+MEDDPICC qualification, Gap Selling questions (quantify cost of inaction), ambition-oriented questions, landmine questions for competitive positioning, and a Disco-Stration option for blended discovery+demo sessions. Generates a structured call plan with hypotheses, question path, and a post-call MEDDPICC scorecard.
 
 ### `/demo-builder`
 
-Generate a structured demo script from customer scenario and feature requirements. Output includes scene-by-scene narrative (pain resonance → solution walkthrough → wow moment), step-by-step actions, expected results, fallback plans per scene, and environment/data preparation checklists.
+Classifies the demo into one of four levels (Standard → Custom → POC → POV), then generates a structured script. Each scene follows Tell-Show-Tell rhythm with persona-driven vignettes. Includes the "Do the Last Thing First" (Great Demo!) alternative pattern, the composure principle for live failures, and post-demo follow-up bullets.
 
 ## Project Structure
 
