@@ -46,9 +46,8 @@ Map the provided information against the required and optional fields:
 | modules | contact |
 | pain_points | tech_stack |
 | solution_summary | lessons_learned |
-| deal_outcome | competitor_displaced |
-| deal_stage | competitor_won |
-| | project_status |
+| deal_outcome | competitor |
+| deal_stage | project_status |
 
 **Deal outcome values**: `won` | `lost` | `ongoing`
 **Deal stage values**: `discovery` | `evaluation` | `poc` | `negotiation` | `closed`
