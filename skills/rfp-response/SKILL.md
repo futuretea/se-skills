@@ -73,7 +73,7 @@ For each requirement, extract:
 | summary | One-sentence summary |
 | detail | Full original text |
 | keywords | Technical keywords extracted from the original text |
-| customer_priority | Inferred priority to the buyer (critical / high / medium / low) — based on emphasis in the RFP |
+| customer_priority | Inferred priority to the buyer (critical / high / medium / low) — based on emphasis in the RFP. Default to medium if unclear. |
 
 ### Step 3: Match against the knowledge base
 
