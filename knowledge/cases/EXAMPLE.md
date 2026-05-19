@@ -1,7 +1,11 @@
 ---
+skill: case-import
+date: 2024-10-15
+inputs: SE 口述项目回顾
+status: reviewed
 customer: 某零售集团
 industry: 零售
-date: 2024-Q3
+engagement_date: 2024-Q3
 oss_version: v3.2
 modules:
   - 数据集成
@@ -11,7 +15,6 @@ effort: 12 人周
 deal_outcome: won
 deal_stage: closed
 competitor: 某商业数据平台
-status: 已上线
 ---
 
 ## Customer Background

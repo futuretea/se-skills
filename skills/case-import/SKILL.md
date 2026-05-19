@@ -23,6 +23,7 @@ Prompt the SE to describe the project in natural language:
 ```
 Describe the project:
 - Who was the customer? (industry, scale)
+- When did this engagement happen? (quarter/year)
 - What problem did they have? (specific pain points)
 - What OSS version did you start from?
 - What customizations were made? (modules, features, effort)
@@ -40,7 +41,7 @@ Map the provided information against the required and optional fields:
 |----------|----------|
 | customer | scale |
 | industry | effort |
-| date | key_metric |
+| engagement_date | key_metric |
 | oss_version | team_size |
 | modules | contact |
 | pain_points | tech_stack |
@@ -61,9 +62,13 @@ Output `knowledge/cases/<customer-slug>-<project-slug>.md`:
 
 ```markdown
 ---
+skill: case-import
+date: <YYYY-MM-DD>
+inputs: <SE narrative>
+status: draft
 customer: <customer name>
 industry: <industry>
-date: <YYYY-QN>
+engagement_date: <YYYY-QN>
 oss_version: <vX.Y>
 modules:
   - <module-1>
@@ -72,7 +77,6 @@ effort: <X person-weeks>
 deal_outcome: won | lost | ongoing
 deal_stage: discovery | evaluation | poc | negotiation | closed
 competitor: <competitor displaced, or competitor who won>
-status: live | POC | delivered
 ---
 
 ## Customer Background

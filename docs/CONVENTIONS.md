@@ -31,16 +31,19 @@ status: draft | reviewed | final
 
 ```yaml
 ---
+skill: case-import
+date: <YYYY-MM-DD>
+inputs: <SE 叙述来源>
+status: draft | reviewed | final
 customer: <客户名>
 industry: <行业>
-date: <YYYY-QN>
+engagement_date: <YYYY-QN>
 oss_version: <开源版本>
 modules: <涉及的功能模块>
 effort: <人周>
 deal_outcome: won | lost | ongoing
 deal_stage: discovery | evaluation | poc | negotiation | closed
 competitor: <被替代的竞品, 或胜出的竞品>
-status: 已上线 | POC | 已交付
 ---
 
 ## 客户背景
