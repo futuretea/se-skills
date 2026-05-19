@@ -128,10 +128,10 @@ project_status: live | POC | delivered
 ## Quality Checklist
 
 - [ ] All required fields filled or annotated as TODO
-- [ ] Deal outcome, deal stage, and competitor fields present
+- [ ] Artifact-level frontmatter present: `skill`, `date`, `inputs`, `status`
+- [ ] Engagement date, deal outcome, deal stage, competitor, and project_status fields present
 - [ ] Pain points are specific and tangible (not generic phrases like "wanted to improve efficiency")
 - [ ] Pitfall records include the symptom → root cause → fix chain
 - [ ] Deal Analysis section filled for won/lost deals
 - [ ] Module names aligned with the feature matrix
 - [ ] File name follows kebab-case convention
-- [ ] Output frontmatter complete
