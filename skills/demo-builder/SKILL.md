@@ -12,7 +12,9 @@ Generate a structured demonstration script from customer scenario and feature re
 
 ## Prerequisites
 
-At minimum, the customer's industry and a list of features to demonstrate are required. The following optional inputs enhance the result:
+At minimum, the customer's industry and a list of features to demonstrate are required. If either is missing, prompt the SE to provide them before proceeding.
+
+The following optional inputs enhance the result:
 - `outputs/discovery/<customer>-call-plan.md` — for personalized scenario design
 - `knowledge/oss-feature-matrix.md` — for verifying feature availability in the OSS version
 - `knowledge/cases/` — for real-world success stories to weave in
