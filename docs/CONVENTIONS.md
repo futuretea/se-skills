@@ -53,6 +53,8 @@ status: 已上线 | POC | 已交付
 - 竞争态势
 ```
 
+参考案例: `knowledge/cases/EXAMPLE.md`
+
 ## RFP 应答模板
 
 每个应答项遵循 FAB 结构：
