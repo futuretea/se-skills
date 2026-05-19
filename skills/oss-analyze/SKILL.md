@@ -38,6 +38,8 @@ If `knowledge/oss-feature-matrix.md` already exists:
 2. `curl` raw.githubusercontent.com files
 3. Direct `git clone` as a last resort
 
+**Error handling**: If the repo is inaccessible (404, auth required, rate limited), report the specific error and stop. If docs/ directory is missing, note the gap in the output and proceed with source-only analysis. If the repo is empty or has no recognizable structure, mark the output as `status: blocked` with an explanation.
+
 ### Step 2: Build project overview
 
 Read the following in order, recording findings:
