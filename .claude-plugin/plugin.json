@@ -8,7 +8,7 @@
   },
   "repository": "https://github.com/futuretea/se-skills",
   "license": "MIT",
-  "keywords": ["solutions-engineer", "pre-sales", "rfp", "demo", "discovery", "open-source"],
+  "keywords": ["solutions-engineer", "sales-engineer", "pre-sales", "presales", "rfp", "rfi", "bid-response", "demo", "discovery", "poc", "case-library", "open-source", "knowledge-management"],
   "skills": [
     "./skills/oss-analyze",
     "./skills/case-import",
