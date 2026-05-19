@@ -31,6 +31,11 @@ Before investing time in a full response, run a qualification check. If the SE p
 | **Competitive Landscape** | /25 | Is the RFP wired for a competitor? Look for proprietary language. |
 | **Strategic Value** | /25 | Does this align with ICP, region, and profitability goals? |
 
+**Scoring rubric** (total /100):
+- ≥75: GO — proceed with full response
+- 60–74: GO WITH RISK — proceed, but flag the weak pillars in the verdict
+- <60: NO-GO — recommend declining unless the SE provides overruling context
+
 **Automatic NO-GO conditions** (hard stops — do not proceed regardless of other scores):
 - Security/compliance requirements are non-negotiable and the OSS + customization cannot satisfy them
 - The RFP is wired for a competitor (proprietary feature language throughout)
@@ -111,14 +116,14 @@ status: draft
 # RFP Response Draft — <Customer Name>
 
 ## Go/No-Go Verdict
-| Pillar | Score |
-|--------|-------|
-| Solution Fit | /25 |
-| Relationship | /25 |
-| Competitive Landscape | /25 |
-| Strategic Value | /25 |
-| **Total** | **/100** |
-| **Verdict** | GO / NO-GO / GO WITH RISK |
+| Pillar | Score | Note |
+|--------|-------|------|
+| Solution Fit | /25 | |
+| Relationship | /25 | |
+| Competitive Landscape | /25 | |
+| Strategic Value | /25 | |
+| **Total** | **/100** | ≥75 GO \| 60–74 GO WITH RISK \| <60 NO-GO |
+| **Verdict** | **GO / NO-GO / GO WITH RISK** | |
 
 ## Win Themes
 > Every response reinforces at least one of these themes
