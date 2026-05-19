@@ -80,7 +80,7 @@ Instead of building up to the outcome, start with it. Open the demo on the finis
 - **Technical audience**: Add architecture walkthroughs, data flow diagrams, API call sequences.
 - **Business audience**: Balance story and proof. Show the workflow, show the metric.
 
-### Step 3: Generate the demo script
+### Step 4: Generate the demo script
 
 Output `outputs/demo/<customer>-demo-script.md`:
 
@@ -168,7 +168,7 @@ If <step X> fails:
 | Performance benchmarks? | ... | ... |
 ```
 
-### Step 4: Post-generation guidance
+### Step 5: Post-generation guidance
 
 - SE should check off the Data Preparation and Environment checklists the day before the demo
 - Fallback screenshots/GIFs should be recorded before the live demo
