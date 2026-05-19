@@ -43,6 +43,7 @@ Score the opportunity against the MEDDPICC framework to surface blind spots befo
 | **E**conomic Buyer | Known / Unknown | Who signs? What is their priority? |
 | **D**ecision Criteria | Known / Unknown | How will they evaluate solutions? |
 | **D**ecision Process | Known / Unknown | Steps from eval to purchase? |
+| **P**aper Process | Known / Unknown | Procurement, legal review, contract timelines? |
 | **I**mplicit Pain | Known / Unknown | What is the cost of doing nothing? |
 | **C**hampion | Identified / Missing | Who is our internal advocate? |
 | **C**ompetition | Known / Unknown | Who else is in the eval? |
@@ -159,11 +160,12 @@ If the SE plans a Disco-Stration, note it here and reduce Phase 3 (Solution Prob
 - **MEDDPICC Scorecard** (updated):
   | Element | Post-call status |
   |---------|-----------------|
-  | M | ... |
-  | E | ... |
+  | M (Metrics) | ... |
+  | E (Economic Buyer) | ... |
   | D (Criteria) | ... |
   | D (Process) | ... |
-  | I | ... |
+  | P (Paper Process) | ... |
+  | I (Implicit Pain) | ... |
   | C (Champion) | ... |
   | C (Competition) | ... |
 - **Validated Hypotheses**:
