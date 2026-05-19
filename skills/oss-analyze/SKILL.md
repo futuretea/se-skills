@@ -23,7 +23,17 @@ Analyze an open source project from its GitHub repository and produce a structur
 If `knowledge/oss-feature-matrix.md` already exists:
 - Read it to understand the previous analysis baseline
 - Note the previous version and date
+- Check `CHANGELOG.md`, release notes, or git tag diff between previous and current versions to identify what changed
 - After generating the new analysis, highlight changes from the previous version in a `## Changes from v<prev>` section
+
+**What to diff**:
+| Area | What changed | Impact on RFP responses |
+|------|-------------|------------------------|
+| New features | Additions since last version | New capabilities to cite |
+| Deprecated/removed | Features dropped or renamed | Stop promising these |
+| API changes | Breaking changes, new endpoints | Update integration answers |
+| Config changes | New/deprecated settings | Update deployment answers |
+| Module restructuring | Moved or renamed components | Update architecture references |
 
 ### Step 1: Acquire the repository
 
