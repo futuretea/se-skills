@@ -15,6 +15,7 @@ effort: 12 人周
 deal_outcome: won
 deal_stage: closed
 competitor: 某商业数据平台
+project_status: 已上线
 ---
 
 ## Customer Background

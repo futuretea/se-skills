@@ -44,6 +44,7 @@ effort: <人周>
 deal_outcome: won | lost | ongoing
 deal_stage: discovery | evaluation | poc | negotiation | closed
 competitor: <被替代的竞品, 或胜出的竞品>
+project_status: 已上线 | POC | 已交付
 ---
 
 ## 客户背景

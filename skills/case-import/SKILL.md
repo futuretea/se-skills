@@ -48,6 +48,7 @@ Map the provided information against the required and optional fields:
 | solution_summary | lessons_learned |
 | deal_outcome | competitor_displaced |
 | deal_stage | competitor_won |
+| | project_status |
 
 **Deal outcome values**: `won` | `lost` | `ongoing`
 **Deal stage values**: `discovery` | `evaluation` | `poc` | `negotiation` | `closed`
@@ -77,6 +78,7 @@ effort: <X person-weeks>
 deal_outcome: won | lost | ongoing
 deal_stage: discovery | evaluation | poc | negotiation | closed
 competitor: <competitor displaced, or competitor who won>
+project_status: live | POC | delivered
 ---
 
 ## Customer Background
