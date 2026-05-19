@@ -125,6 +125,10 @@ se-skills/
 - Skills are decoupled: no hardcoded skill-to-skill dependencies, connected only through shared artifact types
 - See `docs/CONVENTIONS.md` for the full specification
 
+## Contributing
+
+To add a new skill: create a directory under `skills/` with a `SKILL.md` following the Claude Code plugin format, register it in `.claude-plugin/plugin.json`, and add a matching command file under `commands/`. See `docs/CONVENTIONS.md` for artifact conventions and `knowledge/cases/EXAMPLE.md` for the case file template.
+
 ## License
 
 MIT
