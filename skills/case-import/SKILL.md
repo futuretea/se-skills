@@ -28,8 +28,8 @@ Describe the project:
 - What OSS version did you start from?
 - What customizations were made? (modules, features, effort)
 - What went wrong during implementation? (pitfalls)
-- What was the deal outcome? (won / lost) — if lost, who won and why?
-- What deal stage was this? (discovery / eval / POC / negotiation / closed)
+- What was the deal outcome? (won / lost / ongoing) — if lost, who won and why?
+- What deal stage was this? (discovery / evaluation / poc / negotiation / closed)
 - Any quantifiable results?
 ```
 
